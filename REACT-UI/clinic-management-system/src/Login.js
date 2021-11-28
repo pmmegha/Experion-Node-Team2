@@ -56,7 +56,7 @@ function MyForm(props){
             <div>
                 <label>Password :</label>
                 <div>
-                    <input type = "password" name = "password" placeholder = "Enter a strong password"
+                    <input type = "password" name = "password" placeholder = "Enter password"
                         value = {inputs.password || ''} onChange = {handleChange}
                         required></input>
                 </div> 
