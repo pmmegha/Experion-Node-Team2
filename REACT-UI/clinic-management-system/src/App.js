@@ -1,25 +1,54 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+
+import Home from './Homepage';
+import LoginForm from "./Login";
+import RegisterUser from "./RegisterUser";
+import RegisterStaff from "./RegisterStaff";
+import RegisterPatient from "./RegisterPatient";
+import RegisterMedicine from "./RegisterMedicine";
+import About from "./About";
+import NoMatch from "./NoMatch";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <MyRouter/>
+    </>
   );
-}
+};
+
+function MyRouter(){
+  return(
+    <Router>
+      <h1>Clinic Management System</h1>
+      <h3>Phasellus efficitur condimentum ipsum ut vestibulum.</h3>
+      <div>
+      <div><Link to = "/">Home</Link></div>
+      <div><Link to = "/userreg">Register</Link></div>
+      <div><Link to = "/login">LogIn</Link></div>
+      <div><Link to = "/staffreg">Register Staff</Link></div>
+      <div><Link to = "/patientreg">Register Patient</Link></div>
+      <div><Link to = "/medreg">Register Medicine</Link></div>
+      <div><Link  to = "/about">About Us</Link></div>
+
+      </div>
+      <Routes>
+        <Route path = "/" element = {<Home />}/>
+        <Route path = "/about" element = {<About />}/>
+        <Route path = "/login" element = {<LoginForm />}/>
+        <Route path = "/userreg" element = {<RegisterUser />}/>
+        <Route path = "/staffreg" element = {<RegisterStaff />}/>
+        <Route path = "/patientreg" element = {<RegisterPatient />}/>
+        <Route path = "/medreg" element = {<RegisterMedicine />}/>
+        <Route path = "*" element = {<NoMatch />}></Route>
+
+        
+      </Routes>
+
+      <br/><br/>
+      <footer>copyright@2021</footer>
+    </Router>
+  );
+};
 
 export default App;
