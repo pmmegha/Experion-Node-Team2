@@ -6,6 +6,7 @@ import RegisterUser from "./RegisterUser";
 import RegisterStaff from "./RegisterStaff";
 import RegisterPatient from "./RegisterPatient";
 import RegisterMedicine from "./RegisterMedicine";
+import PatientAppointment from "./PatientAppointment"
 import About from "./About";
 import NoMatch from "./NoMatch";
 
@@ -29,6 +30,7 @@ function MyRouter(){
       <div><Link to = "/staffreg">Register Staff</Link></div>
       <div><Link to = "/patientreg">Register Patient</Link></div>
       <div><Link to = "/medreg">Register Medicine</Link></div>
+      <div><Link to="/PatientAppointment">Patient Appintment</Link></div>
       <div><Link  to = "/about">About Us</Link></div>
 
       </div>
@@ -40,6 +42,7 @@ function MyRouter(){
         <Route path = "/staffreg" element = {<RegisterStaff />}/>
         <Route path = "/patientreg" element = {<RegisterPatient />}/>
         <Route path = "/medreg" element = {<RegisterMedicine />}/>
+        <Route path="/patientappointment" element={<PatientAppointment/>}/>
         <Route path = "*" element = {<NoMatch />}></Route>
 
         
